@@ -1,54 +1,36 @@
 import { Download, Search, Trophy, Ticket } from "lucide-react";
-
-const steps = [
-  {
-    icon: Download,
-    step: "01",
-    title: "Baixe o App",
-    description: "Disponível gratuitamente na App Store e Google Play.",
-    color: "from-brand-500 to-brand-600",
-  },
-  {
-    icon: Search,
-    step: "02",
-    title: "Explore e Interaja",
-    description: "Descubra lugares incríveis, avalie e complete tarefas para ganhar pontos.",
-    color: "from-purple-500 to-purple-600",
-  },
-  {
-    icon: Trophy,
-    step: "03",
-    title: "Acumule Pontos",
-    description: "Cada interação vale pontos. Quanto mais usar, mais você ganha!",
-    color: "from-amber-500 to-amber-600",
-  },
-  {
-    icon: Ticket,
-    step: "04",
-    title: "Troque por Cupons",
-    description: "Use seus pontos em campanhas e ganhe cupons de desconto gratuitos.",
-    color: "from-green-500 to-green-600",
-  },
-];
-
+const steps = [{
+  icon: Download,
+  step: "01",
+  title: "Baixe o App",
+  description: "Disponível gratuitamente na App Store e Google Play.",
+  color: "from-brand-500 to-brand-600"
+}, {
+  icon: Search,
+  step: "02",
+  title: "Explore e Interaja",
+  description: "Descubra lugares incríveis, avalie e complete tarefas para ganhar pontos.",
+  color: "from-purple-500 to-purple-600"
+}, {
+  icon: Trophy,
+  step: "03",
+  title: "Acumule Pontos",
+  description: "Cada interação vale pontos. Quanto mais usar, mais você ganha!",
+  color: "from-amber-500 to-amber-600"
+}, {
+  icon: Ticket,
+  step: "04",
+  title: "Troque por Cupons",
+  description: "Use seus pontos em campanhas e ganhe cupons de desconto gratuitos.",
+  color: "from-green-500 to-green-600"
+}];
 const HowItWorks = () => {
-  return (
-    <section id="how-it-works" className="relative py-20 md:py-32 overflow-hidden">
+  return <section id="how-it-works" className="relative py-20 md:py-32 overflow-hidden">
       {/* Curved blue background */}
       <div className="absolute inset-0">
-        <svg className="absolute top-0 left-0 w-full" viewBox="0 0 1440 200" fill="none" preserveAspectRatio="none" style={{ height: '150px' }}>
-          <path
-            d="M0 200L0 100C0 100 360 0 720 0C1080 0 1440 100 1440 100L1440 200H0Z"
-            fill="hsl(var(--brand-500))"
-          />
-        </svg>
+        
         <div className="absolute top-[100px] bottom-[100px] left-0 right-0 bg-brand-500" />
-        <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 200" fill="none" preserveAspectRatio="none" style={{ height: '150px' }}>
-          <path
-            d="M0 0L0 100C0 100 360 200 720 200C1080 200 1440 100 1440 100L1440 0H0Z"
-            fill="hsl(var(--brand-500))"
-          />
-        </svg>
+        
       </div>
 
       {/* Decorative elements */}
@@ -56,7 +38,9 @@ const HowItWorks = () => {
         <div className="absolute top-[20%] left-[5%] w-3 h-3 bg-white/30 rounded-full animate-pulse-soft" />
         <div className="absolute top-[40%] right-[10%] w-4 h-4 bg-white/20 rounded-full animate-float" />
         <div className="absolute bottom-[30%] left-[15%] w-2 h-2 bg-white/40 rounded-full animate-float-slow" />
-        <div className="absolute top-[60%] right-[5%] w-3 h-3 bg-white/25 rounded-full animate-pulse-soft" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-[60%] right-[5%] w-3 h-3 bg-white/25 rounded-full animate-pulse-soft" style={{
+        animationDelay: '1s'
+      }} />
       </div>
 
       <div className="container relative z-10">
@@ -77,14 +61,12 @@ const HowItWorks = () => {
         <div className="relative">
           {/* Connection Line (Desktop) */}
           <div className="hidden lg:block absolute top-[60px] left-[15%] right-[15%] h-1 bg-white/20 rounded-full" />
-          <div className="hidden lg:block absolute top-[60px] left-[15%] right-[15%] h-1 bg-gradient-to-r from-white/60 via-white/40 to-white/20 rounded-full" style={{ clipPath: 'inset(0 75% 0 0)' }} />
+          <div className="hidden lg:block absolute top-[60px] left-[15%] right-[15%] h-1 bg-gradient-to-r from-white/60 via-white/40 to-white/20 rounded-full" style={{
+          clipPath: 'inset(0 75% 0 0)'
+        }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div
-                key={step.step}
-                className="relative text-center group"
-              >
+            {steps.map((step, index) => <div key={step.step} className="relative text-center group">
                 {/* Step Circle */}
                 <div className="relative inline-flex items-center justify-center mb-8">
                   <div className={`w-[120px] h-[120px] bg-gradient-to-br ${step.color} rounded-3xl shadow-2xl shadow-black/20 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative z-10`}>
@@ -103,13 +85,10 @@ const HowItWorks = () => {
                 <p className="text-brand-100">
                   {step.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorks;
